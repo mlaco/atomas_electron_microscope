@@ -1,6 +1,49 @@
 # atomas_electron_microscope
 Tool to probe how Atomas works
 
+I was having fun playing Atomas, and I thought about creating a bot that could learn to play it. Before I can do
+that I need to be able to emulate the game, so I wanted to figure out what distribution spawned atoms have over atomic mass.
+
+I guessed that the distribution might be a function of the average atomic weight in the outer ring. It might be something else though, so I may write and try out other AnalysisMethod subclasses to see which gives the best results.
+
+Some other spawning mechanics I think Atomas might use:
+
+- Each atom in the outer ring contributes to the probability that atoms of a given atomic mass will spawn. The overall distribution would then be the normalized sum of these.
+- A distribution involving the minimum and maximum atomic weight of atoms in the ring.
+
+## Operation
+
+### Gather data
+
+`$ ruby electron_microscope.rb`
+
+Enter the atoms in the outer ring
+```
+Enter atoms in ring, empty to continue...
+1
+1
+2
+3
+
+```
+
+Then enter the atoms that are spawned
+```
+Next atom:
+2
+Next atom:
+1
+```
+
+Whenever atoms in the outer ring are changed or destroyed, enter an empty line to re-enter the outer ring again
+
+When you're finished, just enter an empty line at the prompt to enter the outer ring
+
+### Analyze Data
+electron_microscope will save your data to atomas_data.txt. To analyze that data, run spectrograph.rb
+
+`$ ruby spectrograph.rb`
+
 ## Sample Results
 
 ```

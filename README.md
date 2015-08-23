@@ -1,6 +1,39 @@
 # atomas_electron_microscope
 Tool to probe how Atomas works
 
+## Operation
+
+### Gather data
+
+`$ ruby electron_microscope.rb`
+
+Enter the atoms in the outer ring
+```
+Enter atoms in ring, empty to continue...
+1
+1
+2
+3
+
+```
+
+Then enter the atoms that are spawned
+```
+Next atom:
+2
+Next atom:
+1
+```
+
+Whenever atoms in the outer ring are changed or destroyed, enter an empty line to re-enter the outer ring again
+
+When you're finished, just enter an empty line at the prompt to enter the outer ring
+
+### Analyze Data
+electron_microscope will save your data to atomas_data.txt. To analyze that data, run spectrograph.rb
+
+`$ ruby spectrograph.rb`
+
 ## Sample Results
 
 ```
